@@ -2,6 +2,8 @@ module BestInPlace
   module BestInPlaceHelpers
 
     def best_in_place(object, field, opts = {})
+      puts 'BEST IN PLACE BEST IN PLACE BEST IN PLACE'
+      puts opts
       if opts[:display_as] && opts[:display_with]
         raise ArgumentError, "Can't use both 'display_as' and 'display_with' options at the same time"
       end
@@ -31,6 +33,15 @@ module BestInPlace
         end
         display_value = value ? opts[:collection][1] : opts[:collection][0]
         collection = opts[:collection].to_json
+      end
+      if opts[:type]==:time
+				if !real_object[field].nil?
+					value = real_object[field].strftime('%r')
+					display_value = value
+				else
+					value= '-'
+					display_value = value
+				end
       end
       classes = ["best_in_place"]
       unless opts[:classes].nil?

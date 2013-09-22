@@ -4,6 +4,7 @@ module BestInPlace
 
     class Renderer < Struct.new(:opts)
       def render_json(object)
+        puts opts
         case opts[:type]
         when :model
           {:display_as => object.send(opts[:method])}.to_json
