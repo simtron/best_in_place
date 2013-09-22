@@ -10,3 +10,4 @@ test_app/tmp/**/*
 
 .rvmrc
 coverage
+best_in_place-2.1.0.gem
