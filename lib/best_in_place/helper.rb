@@ -2,8 +2,6 @@ module BestInPlace
   module BestInPlaceHelpers
 
     def best_in_place(object, field, opts = {})
-      puts 'BEST IN PLACE BEST IN PLACE BEST IN PLACE'
-      puts opts
       if opts[:display_as] && opts[:display_with]
         raise ArgumentError, "Can't use both 'display_as' and 'display_with' options at the same time"
       end
