@@ -34,7 +34,7 @@ module BestInPlace
       end
       if opts[:type]==:time
 				if !real_object[field].nil?
-					value = real_object[field].strftime('%r')
+					value = real_object[field].localtime.strftime('%r')
 					display_value = value
 				else
 					value= '-'
